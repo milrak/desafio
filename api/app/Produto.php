@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Protudo extends Model
+class Produto extends Model
 {
     protected $fillable = ['nome','descricao','valorVenda','quantidade', 'ativo'];
     protected $table = 'produtos';
@@ -12,7 +12,7 @@ class Protudo extends Model
 
     public $timestamps = true;
 
-    function categoria() { 
+    function categoria() {
         return $this->belongsTo('App\CategoriaProduto');
     }
 
