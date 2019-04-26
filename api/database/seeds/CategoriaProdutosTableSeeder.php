@@ -11,7 +11,9 @@ class CategoriaProdutosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categoria_produtos')->insert([
+
+        $categorias =[
+        [
             'nome'=> 'Bazar',
             'ativo'=> 'y'
         ],
@@ -26,6 +28,12 @@ class CategoriaProdutosTableSeeder extends Seeder
         [
             'nome'=> 'Exemplo desativado',
             'ativo'=> 'n'
-        ]);
+        ]];
+
+
+        foreach ($categorias as $categoria) {
+            DB::table('categoria_produtos')->insert($categoria);
+        }
+
     }
 }
