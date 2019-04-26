@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/', function (Request $request) {
+    return response()->json(['mensagem'=>"Conexão estabelecida", 'dados'=> null], 200);
 });
+
+Route::resource('categoria', 'CategoriaProdutoController');
+Route::resource('produto', 'ProdutosController');
